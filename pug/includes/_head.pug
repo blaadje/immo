@@ -1,0 +1,33 @@
+<? session_start(); ?>
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title
+        link(rel='stylesheet', href='style/application.css')
+        script(src='https://code.jquery.com/jquery-3.1.1.min.js')
+        script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js')
+        script(src='js/parallax.js')
+    body
+
+header
+    a(href="index.php"): p.logo Immo
+    nav
+        a(href='acheter.php') Acheter
+        a(href='contact.php') A propos
+        <? if (isset($_SESSION['email'])){ ?>
+        ul 
+            li
+                span Bonjour <? echo $_SESSION['nom']; ?> 
+                img(src="images/downArrow.svg", alt="")
+            li 
+                a(href="#") Mon compte
+            li 
+                a(href="deconnection.php") Se deconnecter
+        <?}else {?>
+        ul
+            li
+                a.connexion(href='connection.php') Se connecter
+                <?};?>
+            
+block content

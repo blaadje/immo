@@ -1,0 +1,23 @@
+extends includes/_head.pug
+block content
+    <? include_once 'includes/functions.php';?>
+    #lien
+        #banner.cf
+            h1 3 630 annonces
+            h2 Vente appartement ou maison 
+        .wrapper
+            #contentAcheter
+                h1 Nos annonces
+                <? $id = $_GET['id'];?>
+                <? jafficheById($id);?> 
+     
+    script.
+        $(document).ready(function() {
+            $(document).on('click', ".images>div:not('.selected')", function () {
+                var nth_child = $(this).parent().children().length - $(this).nextAll().length;
+                $('.images div:not(.image):nth-child('+ nth_child +')').toggleClass('selected selectedFirst').fadeIn( "slow" );
+                $('.images div:not(.image):not(:nth-child('+ nth_child +'))').removeClass('selected selectedFirst').fadeIn( "slow" );
+            });
+        });
+    
+    include includes/_footer.pug

@@ -1,0 +1,77 @@
+extends includes/_head.pug
+block content
+    <? include_once 'includes/functions.php';?> 
+    script.
+        $(document).ready(function(){
+            $( ".search" ).tabs();
+        });
+    #bannerAccueil.cf  
+        h1 Chercher, trouvez
+        h2 parmi <? countBiens(); ?> annonces immobilières
+        .cf.search  
+            ul  
+                li
+                    a(href='#tabs1') Acheter
+                li
+                    a(href='#tabs2') Louer
+            br
+            #tabs1
+                form(action='#', method='POST')
+                    input(type='text', placeholder='Lieu')
+                    input(type='text', placeholder='Budget max €')
+                    input(type='text', placeholder='Type de bien')
+                    input.submit(type='submit', value='Rechercher')
+            #tabs2
+                form(action='#', method='POST')
+                    input(type='text', placeholder='Lieu')
+                    input(type='text', placeholder='test max €')
+                    input(type='text', placeholder='Type de bien')
+                    input.submit(type='submit', value='Rechercher')
+            div(style='clear:both')
+    .wrapper
+        #newAnnonce.cf   
+            h1
+                | Les nouvelles annonces
+                hr
+            #slider
+                <? $biens2 = new afficheBienLimited();?>
+                <? $biens2->getBien();?>
+        #content
+            h1 Le logement qu’il vous faut est déjà sur Immo.com 
+            img(src="images/contentImg.png", alt="")
+            p.
+                Vous êtes intéressé par l’achat d’un logement neuf ? Nous vous proposons 
+                les offres les plus récentes ou les avant-premières des principaux promoteurs
+                du marché. <br> <br>
+                Les modélisations en 3 dimensions des programmes immobiliers neufs et les visites 
+                virtuelles proposées par Bien’ici, vous permettent de vous projeter dans votre 
+                future maison ou appartement. <br> <br>
+                En vous offrant le meilleur de l’immobilier, des annonces claires et à jour et des 
+                services uniques, nous avons pour ambition de vous simplifier la vie durant toute 
+                la durée de votre recherche immobilière.  
+    #bandeauVert
+        h1 Avec Immo.com vous
+        br  
+        .choisissez
+            h2 Choisissez
+            p Parmis une selection affinee des meilleurs biens immobiliers du marche, pour
+            .maison
+                img(src="images/house.svg", alt="")
+                span maisons
+                br
+                span.subtitle testikuhn
+            p.ou ou
+            .appartement
+                img(src="images/immeuble.svg", alt="")
+                span appartements
+                br
+                span.subtitle testikuhn
+        .reservez
+            h2 Reservez
+            .rapide
+                img(src="images/clock.svg", alt="")
+                p Les offres qui correspondent a vos attentes et recevez une reponse rapidement
+            .rapide
+                img(src="images/clock.svg", alt="")
+                p Les offres qui correspondent a vos attentes et recevez une reponse rapidement
+    include includes/_footer.pug

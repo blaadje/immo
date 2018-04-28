@@ -1,0 +1,26 @@
+extends includes/_head.pug
+block content
+    #banner.cf
+        h1 Connexion
+        h2 Inscrivez vous ou connectez vous
+    .wrapper
+        #contentAcheter
+            <? include 'includes/functions.php';?>
+            <? if (isset($_SESSION['email'])){ ?>
+            <?    echo 'Vous etes deja connecte!';} else{?>
+            form(action="" method="post")
+                h1 Connection
+                label Identifiant
+                    input(name="email" type="text")
+                br
+                label Mot de passe
+                    input(name="password" type="text")
+                br
+                input(type="submit")
+                br
+                a(href="inscription.php") S'inscrire
+            <?};?>
+            <? if (isset($_POST['email']) && isset($_POST['password'])){ ?>
+            <? $email = $_POST['email']; $password = $_POST['password']; ?>
+            <? connection($email, $password); };?>
+    include includes/_footer.pug

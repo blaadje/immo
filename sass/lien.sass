@@ -1,0 +1,187 @@
+#lien
+    #banner
+        background-size: cover
+        text-align: center
+        height: 400px
+        padding-top: 6em
+
+        h1, h2
+            margin-left: 4em
+            color: white
+            text-align: left
+            font-size: 3em
+        h1
+            padding-top: 1.8em
+        h2
+            font-weight: 100
+
+    #contentAcheter
+        padding: .5em
+        h1
+            font-size: 2em
+            color: $text
+            margin: 1em
+        a
+            outline: none
+            margin: 0 3.7em 3.7em 0
+            &:last-child
+                margin: 0
+            &:hover
+                .bien
+                    box-shadow: 0px 0px 62px 0px rgba(0, 0, 0, 0.35)
+                .image
+                    transform: scale(1.2)
+        .bien
+            margin-bottom: 3.7em
+            padding-bottom: 1em
+            width: 100%
+            padding: 1.5em
+            margin: 0
+
+            transition: all .5s ease-in-out
+            box-shadow: 0px 0px 62px 0px rgba(0, 0, 0, 0.2)
+            .content
+                width: 70%
+                display: inline-block
+                position: relative
+                .nbImage
+                    background: rgba(0,0,0,0.5)
+                    border-radius: .2em
+                    padding: .5em .8em
+                    color: white
+                    z-index: 3
+                    display: inline-block
+                    position: absolute
+                    top: 40px
+                    right: 40px
+                    span, img
+                        display: inline-block
+                        vertical-align: top
+                    span
+                        font-size: .9em
+                    img
+                        width: 1em
+                        margin-right: .5em
+                .images
+                    display: flex
+                    flex-wrap: wrap-reverse
+                    align-items: flex-start
+
+                    .selected, .selectedFirst:first-child
+                        animation: fadeIn 1s linear
+                        animation-fill-mode: forwards
+                        width: 100% !important
+                        height: 552px !important
+                        order: 1
+                        opacity: 0
+                    @keyframes fadeIn
+                        0%
+                            transition: all .6s ease-in-out
+                            opacity: 0
+                        100%
+                            opacity: 1
+                    .image
+                        width: 100%
+                        height: 100%
+                        transition: all .5s ease-in-out
+                    div:not(.image):not(.nbImage)
+                        margin: 1em
+                        width: 200px
+                        height: 135px
+                        cursor: pointer
+                        overflow: hidden
+                        &:not(.selected):not(.selectedFirst:first-child):hover
+                            .image
+                                transform: scale(1.3)
+            .infos
+                span
+                    margin: left
+                    color: white
+                    display: inline-block
+                    background: $text
+                    padding: .5em .8em
+                    margin: .5em
+                    border-radius: .1em
+            aside
+                vertical-align: top
+                display: inline-block
+                width: 30%
+                padding-top: 1em
+                text-align: center
+                .telephone
+                    font-weight: 100
+                    width: 80%
+                    background: $text
+                    border-radius: .1em
+                    display: inline-block
+                    margin-bottom: 1.5em
+                    padding: .9em
+                    span, img
+                        display: inline-block
+                        vertical-align: middle
+                    span
+                        margin: 0
+                        font-size: 1.2em
+                        color: white
+                        &::before
+                            content: '+33 '
+                    img
+                        margin-right: .5em
+                        width: 1.5em
+                p
+                    font-size: 1.3em
+                    color: $text
+                    margin: 0 
+
+                hr
+                    margin: 1.5em
+                    border-top: none
+                    border-bottom: 1px solid $border
+                h2
+                    margin-bottom: 1.5em
+                input[type="text"], input[type="date"], input[type="time"]
+                    padding: .5em
+                    margin-bottom: .5em
+                    outline: none
+                    font-size: 1.2em
+                    border: 1px solid $border
+                    height: 50px
+                    color: #737b9a
+                    width: 80%
+                    border-radius: .1em
+                    &::-webkit-input-placeholder
+                        color: #737b9a
+                input[type="submit"]
+                    outline: none
+                    background: $text
+                    width: 80%
+                    height: 50px
+                    border: none
+                    border-radius: .1em
+                    color: white
+            h2,h3
+                padding: 0 1em
+            h2
+                font-weight: 200
+                font-size: 1.3em
+                color: $text
+            h3
+                font-weight: 100
+                font-size: 1.2em
+                color: #737b9a
+            p
+                padding: .2em
+                color: #737b9a
+                font-size: 1.2em
+            .conteneurImg
+                overflow: hidden
+                width: 320px
+                height: 170px
+                margin-bottom: .8em
+                .image
+                    transition: all .5s ease-in-out
+                    width: 100%
+                    height: 100%
+                    background-position: center
+                    background-size: cover !important
+                    background-repeat: no-repeat !important

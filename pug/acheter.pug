@@ -1,0 +1,14 @@
+extends includes/_head.pug
+block content
+    <? include_once 'includes/functions.php';?>
+    #acheter
+        #banner.cf
+            h1 3 630 annonces
+            h2 Vente appartement ou maison 
+        .wrapper
+            #contentAcheter
+                h1 Nos annonces
+                <? $biens = new afficheBien();?>
+                <? $biens->getBien();?>
+        
+    include includes/_footer.pug
